@@ -4,7 +4,7 @@ import os
 import google.generativeai as genai
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=os.getenv("AIzaSyC5_CI4ROB7T-TFxG_0v7zRiLNfnXJ-qCs"))
 model_text = genai.GenerativeModel("gemini-1.5-flash-latest")
 
 past_prompts = {}
