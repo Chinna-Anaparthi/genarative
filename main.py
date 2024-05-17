@@ -5,7 +5,7 @@ import google.generativeai as genai
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-model_text = genai.GenerativeModel("gemini-pro")
+model_text = genai.GenerativeModel("gemini-1.5-flash-latest")
 
 past_prompts = {}
 
@@ -13,7 +13,7 @@ past_prompts = {}
 def get_gemini_response(prompt):
     if prompt not in past_prompts:
         try:
-            model = genai.GenerativeModel("gemini-pro")
+            model = genai.GenerativeModel("gemini-1.5-flash-latest")
             chat = model.start_chat(history=[])
             response = chat.send_message(prompt)
             past_prompts[prompt] = "".join([chunk.text for chunk in response])
